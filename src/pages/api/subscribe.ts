@@ -1,16 +1,16 @@
 import { query as q } from "faunadb";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from 'next-auth/react';
-import { fauna } from "../../Services/fauna";
+import { fauna } from "../../services/fauna";
 
-import { stripe } from '../../Services/stripe'
+import { stripe } from '../../services/stripe'
 
 type User = {
   ref: {
     id: string;
   }
   data: {
-    stripe_Customer_id: string;
+    stripe_customer_id: string;
   }
 }
 
@@ -27,7 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       )
     )
 
-    let customerId = user.data.stripe_Customer_id
+    let customerId = user.data.stripe_customer_id
 
     if (!customerId) {
       const stripeCustomer = await stripe.customers.create({
@@ -40,7 +40,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           q.Ref(q.Collection('users'), user.ref.id),
           {
             data: {
-              stripe_Customer_id: stripeCustomer.id,
+              stripe_customer_id: stripeCustomer.id,
             }
           }
         )
