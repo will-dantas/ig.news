@@ -58,9 +58,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [
-      { params: { slug: 'saas-single-tenant-ou-multi-tenant-qual-escolher' } }
-    ],
+    paths: [],
     fallback: 'blocking'
   }
 }
