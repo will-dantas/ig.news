@@ -19,7 +19,7 @@
 </h1>
 
 # ✍️ Description
-### Se trata de uma aplicação web Front-End e JAMSatck denselvolvidado com os frameworks JavaScript ReactJS e Next.JS.
+### Se trata de uma aplicação web Front-End e JAMSatck densenvolvido com os frameworks JavaScript ReactJS e Next.JS.
 O Ignews é uma plataforma de posts atualizados sobre o ReactJS, onde o usuário pode se autenticar pelo GitHub graças ao Next-auth, mas só poderá ter acesso aos posts completos ao se inscrever na plataforma, que é feito utilizando a API do Stripe, onde todos os dados importantes para a aplicação vão ficar salvos no banco de dados serverless do FaunaDB. Os posts são publicados e atualizados através do CMS Prismic, mais uma vez sendo possível pelo consumo de suas APIs.
 <br />
 Para que as pesquisa, como feitas no Google, possam indexar e rastrear facilmente o conteúdo, é se utilizado do método de SSR (Server-Side Rendering), de forma que, o conteúdo pode ser renderizado antes que a página seja carregada, feito de forma dinâmica. Nas páginas que são estáticas, é utilizado o método de SSG (Static Site Generator), onde a performance do carregamento das páginas HTML passa a ser muito mias rápido, graças ao seu pré carregamento.
